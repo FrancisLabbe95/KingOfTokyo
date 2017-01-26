@@ -1,0 +1,54 @@
+namespace kingoftokyo;
+
+class GameManager{
+  singleton;
+  1 -> * Card cards;
+  1 -> * Player players;
+  1 -> * Dice dices;
+}
+
+class Card{
+  String name;
+  int cost;
+  boolean type;
+  String ability;
+}
+
+class Player{
+  String name;
+  int token;
+  int life;
+  boolean inTokyo;
+  boolean alive;
+  int numberRolls;
+  1 -> * Card;
+  1 -> * Dice;
+}
+
+class Dice{
+  enum roll;
+  boolean reroll;
+}//$?[End_of_model]$?
+
+class Card
+{
+  position 50 30 109 45;
+}
+
+class Player
+{
+  position 50 130 109 45;
+  position.association Dice__Player 36,142 30,0;
+}
+
+class Dice
+{
+  position 65 407 121 74;
+}
+
+class GameManager
+{
+  position 373 26 109 45;
+  position.association Card:cards__GameManager 0,5 116,32;
+  position.association GameManager__Player:players 0,14 128,0;
+}
