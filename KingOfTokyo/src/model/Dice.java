@@ -8,20 +8,24 @@ package model;
 public class Dice
 {
 
+
   //------------------------
   // MEMBER VARIABLES
   //------------------------
 
   //Dice Attributes
-  private enum roll{	  
+  public enum Roll{
+	  ONE,TWO,THREE,ATTACK,TOKEN,LIFE
   }
+  
+  public Roll roll;
   private boolean reroll;
 
   //------------------------
   // CONSTRUCTOR
   //------------------------
 
-  public Dice(enum aRoll, boolean aReroll)
+  public Dice(Roll aRoll, boolean aReroll)
   {
     roll = aRoll;
     reroll = aReroll;
@@ -31,7 +35,7 @@ public class Dice
   // INTERFACE
   //------------------------
 
-  public boolean setRoll(enum aRoll)
+  public boolean setRoll(Roll aRoll)
   {
     boolean wasSet = false;
     roll = aRoll;
@@ -47,7 +51,7 @@ public class Dice
     return wasSet;
   }
 
-  public enum getRoll()
+  public Roll getRoll()
   {
     return roll;
   }
