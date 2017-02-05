@@ -1,0 +1,13 @@
+button{
+	width:20vw;
+	height:10vh;
+	font-size:2vw;
+	color:black;
+	border-color: #E5CB10;
+	background-color: #FFFFFF;
+}
+button:hover{
+	transition-duration: 0.5s;
+	background-color: #575757;
+	color:white;
+}
